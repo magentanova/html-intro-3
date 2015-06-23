@@ -1,0 +1,159 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	background-image:url("../img/open-heart.png");
+	background-repeat:no-repeat;
+	background-size: 14px 14px;
+	margin: auto;
+	margin-top: 11px;
+	width: 14px;
+	height: 14px;
+	display: block;
+}
+
+a:target {
+	background-image: url("../img/full-heart.png");
+}
+
+body {
+	font-size:0px;
+	font-family: Helvetica,Arial,sans-serif;
+	color: #4294C5;
+}
+
+p {
+	margin:auto;
+	width: 14px;
+	font-size: 14px;
+	margin-top: 11px;
+}
+
+.chosen-color {
+	width:16px;
+	height:16px;
+	margin:auto;
+	margin-top: 11px;
+}
+
+.color-option:hover > div.chosen-color{
+	border:1px solid white;
+}
+
+.grid-color {
+	width:16px;
+	height:16px;
+	margin: 2px;
+}
+
+.grid-row {
+	margin: auto;
+	margin-top: 0px;
+	width: 40px;
+	display:flex;
+}
+.like-option:hover > a{
+	background-image: url("../img/white-heart.png");
+}
+
+.material-icons {
+	margin:auto;
+	margin-top: 5px;
+	width: 24px;
+}
+
+.material-icons.md-18 { 
+	font-size: 18px; 
+	display: block;
+	width: 18px;
+	margin-top: 11px;
+}
+
+.pop-option:hover > div.popout{
+	display:block;
+	bottom: 38px;
+}
+
+.popout {
+	position:absolute;
+	bottom: 56px;
+	left: -5px;
+	border: 1px solid #4294C5;
+	width: 56px;
+	display: none;
+	-webkit-transition: bottom 1s linear;
+	transition: bottom 1s linear;
+	padding: 5px;
+}
+
+.sizes-img {
+	width: 34px;
+	position: relative;
+	margin: auto;
+	top: 8px;
+	display: block;
+}
+
+.popout-notch {
+	position: relative;
+	margin: auto;
+	bottom: -12px;
+	width: 12px;
+	height: 12px;
+	background-color: white;
+	border-bottom: 1px solid #4294C5;
+	border-right: 1px solid #4294C5;
+	-ms-transform: translate(50px,100px); /* IE 9 */     -webkit-transform: translate(50px,100px); /* Safari */     
+	transform: rotate(45deg);
+}
+
+.tee-box {
+	display:flex;
+	position: relative;
+	flex:1;
+	height: 275px;
+	border: 1px solid #4294C5;
+	margin: 15px;
+}
+
+.tee-option {
+	flex: 1;
+	margin-top: 234px;
+	border-top: 1px solid #4294C5;
+	border-left: 1px solid #4294C5;
+	color: #4294C5;
+	position: relative;
+}
+
+.tee-option:hover {
+	background-color: #4294C5;
+	color:white;
+}
+
+.tee-option:first-child {
+    border-left: 0;
+}
+
+.tees-container {
+	display:flex;
+	/* border: 1px solid #4294C5; */
+	width: 800px;
+	margin: auto;
+}
+
+#block1 {
+	background-color: #4294FE;
+}
+
+#block2 {
+	background-color: #D482AA;
+}
+
+#block3 {
+	background-color: #DBB07D;
+}
+
+#block4 {
+	background-color: #5CE65C
+}
