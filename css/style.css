@@ -37,7 +37,6 @@ input[type="checkbox"]{
 input[type="checkbox"]:checked ~ div.shirts-container{
 	-webkit-transform:rotateY(180deg);
 	transform: rotateY(180deg);
-	transition: .5s;
 }
 
 /*input[type="checkbox"] ~ img.front{
@@ -154,11 +153,18 @@ p {
 	backface-visibility:hidden;
 	-webkit-backface-visibility: hidden;
 }
+.shirt-img.back {
+	-webkit-transform:translateX(-50%)rotateY(180deg);
+	transform: translateX(-50%)rotateY(180deg);
+}
 
 .shirts-container {
+	transition: all .25s ease;
 	height: 86.5%;
 	padding-top: 9%;
 	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
 	-webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 	backface-visibility:hidden;
