@@ -23,6 +23,36 @@ body {
 	color: #4294C5;
 }
 
+input[type="checkbox"]{
+  outline: none;
+  border: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  z-index:10;
+}
+
+input[type="checkbox"]:checked ~ div.shirts-container{
+	-webkit-transform:rotateY(180deg);
+	transform: rotateY(180deg);
+	transition: .5s;
+}
+
+/*input[type="checkbox"] ~ img.front{
+	-webkit-transform:rotateY(180deg);
+	transform: rotateY(180deg);
+	transition: .5s;
+}*/
+
+input[type="checkbox"]:hover ~ i.spin-icon{ /* have to replace the hover functionality of the icon 
+	because we are now placed on top of it */
+	background-color: #4294C5;
+	color:white;
+}
+
+
 p {
 	margin:auto;
 	width: 14px;
@@ -42,16 +72,21 @@ p {
 }
 
 .grid-color {
-	width:16px;
-	height:16px;
+	width: 16px;
+	height: 16px;
 	margin: 2px;
+}
+
+.grid-color:hover {
+	border: 2px solid #4294C5;
 }
 
 .grid-row {
 	margin: auto;
-	margin-top: 0px;
 	width: 40px;
+	margin-top: 0px;
 	display:flex;
+	z-index: 2;
 }
 .like-option:hover > a{
 	background-image: url("../img/white-heart.png");
@@ -70,46 +105,88 @@ p {
 	margin-top: 11px;
 }
 
+.material-icons.md-18.spin-icon {
+	border-left:1px solid #4294C5;
+	border-bottom: 1px solid #4294C5;
+	position: absolute;
+	margin-top: 0;
+	top: 0;
+	right: 0px;
+}
+
+.material-icons.md-18.spin-icon:hover {
+	background-color: #4294C5;
+	color:white;
+}
+
+.options-container {
+	display:flex;
+	bottom: 0;
+}
+
 .pop-option:hover > div.popout{
-	display:block;
-	bottom: 38px;
+	opacity:1;
+	bottom: 0100%;
 }
 
 .popout {
 	position:absolute;
-	bottom: 56px;
-	left: -5px;
+	bottom: 120%;
+	left: 50%;
+	transform: translate(-50%);
 	border: 1px solid #4294C5;
-	width: 56px;
-	display: none;
-	-webkit-transition: bottom 1s linear;
-	transition: bottom 1s linear;
+	background-color: white;
+	z-index: 1;
+	width: 135%;
+	display: block;
+	opacity: 0;
+	-webkit-transition: bottom .15s linear;
+	transition: bottom .15s linear;
 	padding: 5px;
+}
+
+.shirt-img {
+	position:absolute;
+	width: 86%;
+	left: 50%;
+	-webkit-transform:translateX(-50%)rotateY(0deg);
+	transform: translateX(-50%)rotateY(0deg);
+	backface-visibility:hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.shirts-container {
+	height: 86.5%;
+	padding-top: 9%;
+	position: relative;
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	backface-visibility:hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 .sizes-img {
 	width: 34px;
 	position: relative;
 	margin: auto;
-	top: 8px;
 	display: block;
+	z-index: 2;
 }
 
 .popout-notch {
-	position: relative;
-	margin: auto;
-	bottom: -12px;
+	position: absolute;
 	width: 12px;
 	height: 12px;
 	background-color: white;
 	border-bottom: 1px solid #4294C5;
 	border-right: 1px solid #4294C5;
 	-ms-transform: translate(50px,100px); /* IE 9 */     -webkit-transform: translate(50px,100px); /* Safari */     
-	transform: rotate(45deg);
+	left: 50%;
+	bottom: -11px;
+	transform: rotate(45deg)translate(-50%);
 }
 
 .tee-box {
-	display:flex;
 	position: relative;
 	flex:1;
 	height: 275px;
@@ -119,11 +196,13 @@ p {
 
 .tee-option {
 	flex: 1;
-	margin-top: 234px;
+	z-index: 0;
+	/*margin-top: 234px;*/
 	border-top: 1px solid #4294C5;
 	border-left: 1px solid #4294C5;
 	color: #4294C5;
 	position: relative;
+	padding-bottom: 3%;
 }
 
 .tee-option:hover {
@@ -137,7 +216,6 @@ p {
 
 .tees-container {
 	display:flex;
-	/* border: 1px solid #4294C5; */
 	width: 800px;
 	margin: auto;
 }
